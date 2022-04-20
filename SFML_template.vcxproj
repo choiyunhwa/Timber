@@ -148,7 +148,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Branches.cpp" />
+    <ClCompile Include="Framework.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GraphicsManager.cpp" />
+    <ClCompile Include="main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="newmain.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RIP.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="UiManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="Branches.h" />
+    <ClInclude Include="Framework.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GraphicsManager.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="RIP.h" />
+    <ClInclude Include="sceneID.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="side.h" />
+    <ClInclude Include="SoundID.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="UiManager.h" />
+    <ClInclude Include="GraphicsID.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
