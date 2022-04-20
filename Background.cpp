@@ -24,3 +24,23 @@ void Background::InitializeBackground()
 	}
 
 }
+
+Sprite Background::GetBackground()
+{
+	return background;
+}
+
+Sprite* Background::moveObjectArray()
+{
+	return moveObject;
+}
+
+bool* Background::moveActivateArray()
+{
+	return moveActivate;
+}
+
+float* Background::moveSpeedArray()
+{
+	return moveSpeed;
+}

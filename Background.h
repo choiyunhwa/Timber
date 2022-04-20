@@ -12,5 +12,9 @@ private:
 	float moveSpeed[4];
 public:
 	void InitializeBackground();
+	Sprite GetBackground();
+	Sprite* moveObjectArray();
+	bool* moveActivateArray();
+	float* moveSpeedArray();
 };
 

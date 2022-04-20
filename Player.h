@@ -12,6 +12,7 @@ private:
 public:
 	void initializePlayer();
 	Sprite GetSpritePlayer();
+	void SetSide(side _byside);
 
 };
 

@@ -5,28 +5,28 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="헤더 파일\enum">
-      <UniqueIdentifier>{c34618d9-11dd-461d-9669-1ba0b8e96c92}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Manager">
       <UniqueIdentifier>{6b8f32fe-e82e-4d21-a9c8-8452a457c7f1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\Manager">
-      <UniqueIdentifier>{d6ef3305-ceb8-4e9a-9b0f-a7898bf1dd4b}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\Main">
       <UniqueIdentifier>{9fbcc23f-4bfb-4876-bccf-f04d99767ce2}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\Object">
       <UniqueIdentifier>{bca2a36e-8a20-4f7c-aad3-b7c57e12df2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일\enum">
+      <UniqueIdentifier>{c34618d9-11dd-461d-9669-1ba0b8e96c92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Manager">
+      <UniqueIdentifier>{d6ef3305-ceb8-4e9a-9b0f-a7898bf1dd4b}</UniqueIdentifier>
     </Filter>
     <Filter Include="헤더 파일\Object">
       <UniqueIdentifier>{61f8870f-4c7b-4475-ad60-942a8591f39f}</UniqueIdentifier>
@@ -67,6 +67,15 @@
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
     <ClCompile Include="RIP.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Axe.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree.cpp">
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
   </ItemGroup>
@@ -111,6 +120,15 @@
       <Filter>헤더 파일\Object</Filter>
     </ClInclude>
     <ClInclude Include="RIP.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Axe.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
       <Filter>헤더 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>

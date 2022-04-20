@@ -6,6 +6,10 @@
 #include "Background.h"
 #include "Branches.h"
 #include "Player.h"
+#include "RIP.h"
+#include "Axe.h"
+#include "Log.h"
+#include "Tree.h"
 
 #include <SFML/Graphics.hpp>
 #include <random>
@@ -34,6 +38,10 @@ private:
 	Background backgrounds;
 	Branches branches;
 	Player player;
+	RIP rip;
+	Axe axe;
+	Log log;
+	Tree tree;
 
 public:
 

@@ -7,34 +7,34 @@ using namespace sf;
 using namespace std;
 
 
-
-//나무가지를 한칸씩 내려줌
-void UpdateBranches(side sides[], int length, mt19937& gen)
-{
-    for (int i = length - 1; i >= 0; --i)
-    {
-        sides[i] = sides[i - 1];
-    }
-    int rnd = gen() % 5;
-
-    switch (rnd)
-    {
-    case 1:
-        sides[0] = side::LEFT;
-        break;
-    case 2:
-        sides[0] = side::RIGHT;
-        break;
-    default:
-        sides[0] = side::NONE;
-        break;
-    }
-}
-
-int main()
-{
-    random_device rd;   // non-deterministic generator
-    mt19937 gen(rd());  // to seed mersenne twister.
+//
+////나무가지를 한칸씩 내려줌
+//void UpdateBranches(side sides[], int length, mt19937& gen)
+//{
+//    for (int i = length - 1; i >= 0; --i)
+//    {
+//        sides[i] = sides[i - 1];
+//    }
+//    int rnd = gen() % 5;
+//
+//    switch (rnd)
+//    {
+//    case 1:
+//        sides[0] = side::LEFT;
+//        break;
+//    case 2:
+//        sides[0] = side::RIGHT;
+//        break;
+//    default:
+//        sides[0] = side::NONE;
+//        break;
+//    }
+//}
+//
+//int main()
+//{
+//    random_device rd;   // non-deterministic generator
+//    mt19937 gen(rd());  // to seed mersenne twister.
 
     //VideoMode vm(1920, 1080); //해상도 정보가 들어있음(추가로 다른 인자를 가지고 올 수 있음
     //RenderWindow window(vm, "Timber!", Style::Default);
@@ -153,20 +153,20 @@ int main()
     // Prepare the axe
     /*Texture textureAxe;
     textureAxe.loadFromFile("graphics/axe.png");*/
-    Sprite spriteAxe;
-    spriteAxe.setTexture(textureAxe);
-    spriteAxe.setPosition(700, 830);
+    //Sprite spriteAxe;
+    //spriteAxe.setTexture(textureAxe);
+    //spriteAxe.setPosition(700, 830);
 
-    // Line the axe up with the tree
-    const float AXE_POSITION_LEFT = 700;
-    const float AXE_POSITION_RIGHT = 1075;
+    //// Line the axe up with the tree
+    //const float AXE_POSITION_LEFT = 700;
+    //const float AXE_POSITION_RIGHT = 1075;
 
     // Prepare the flying log
     //Texture textureLog;
     //textureLog.loadFromFile("graphics/log.png");
-    Sprite spriteLog;
+ /*   Sprite spriteLog;
     spriteLog.setTexture(textureLog);
-    spriteLog.setPosition(810, 720);
+    spriteLog.setPosition(810, 720);*/
 
     /*SoundBuffer chopBuffer;
     chopBuffer.loadFromFile("sound/chop.wav");
@@ -185,128 +185,128 @@ int main()
 
 
     // Some other useful log related variables
-    bool logActive = false; //도끼를 쳤을때 날라가는 토망
-    float logSpeedX = 1000;
-    float logSpeedY = -1500;
+    //bool logActive = false; //도끼를 쳤을때 날라가는 토망
+    //float logSpeedX = 1000;
+    //float logSpeedY = -1500;
 
-    bool acceptInput = false; //입력 키
+    //bool acceptInput = false; //입력 키
 
    /* Clock clock;
     Texture textureTree;
     textureTree.loadFromFile("graphics/Tree.png");*/
 
-    Sprite spriteTree;
+  /*  Sprite spriteTree;
     spriteTree.setTexture(textureTree);
-    spriteTree.setPosition(810, 0);
+    spriteTree.setPosition(810, 0);*/
 
-    while (window.isOpen())
-    {
-        Time dt = clock.restart();
-        Event event;
-        while (window.pollEvent(event))
-        {
-            switch (event.type)
-            {
-            case Event::Closed:
-                window.close();
-                break;
-            case Event::KeyPressed:
-                switch (event.key.code)
-                {
-                case Keyboard::Escape:
-                    window.close();
-                    break;
-                case Keyboard::Return:
-                {
-                    isPause = false;
+    //while (window.isOpen())
+    //{
+    //    Time dt = clock.restart();
+    //    Event event;
+    //    while (window.pollEvent(event))
+    //    {
+    //        switch (event.type)
+    //        {
+    //        case Event::Closed:
+    //            window.close();
+    //            break;
+    //        case Event::KeyPressed:
+    //            switch (event.key.code)
+    //            {
+    //            case Keyboard::Escape:
+    //                window.close();
+    //                break;
+    //            case Keyboard::Return:
+    //            {
+    //                isPause = false;
 
-                    score = 0;
-                    timeRemaining = timeMax;
-                    acceptInput = true;
+    //                score = 0;
+    //                timeRemaining = timeMax;
+    //                acceptInput = true;
 
-                    for (int i = 0; i < countBranches; ++i)
-                    {
-                        sideBranches[i] = side::NONE;
-                    }
-                    spriteRIP.setPosition(675, 2000);
-                    spritePlayer.setPosition(580, 720);
-                }
-                break;
-                case Keyboard::Left:
-                    if (acceptInput && !isPause)
-                    {
-                        chop.play();
-                        {
-                            playerSide = side::LEFT;
-                            ++score;
+    //                for (int i = 0; i < countBranches; ++i)
+    //                {
+    //                    sideBranches[i] = side::NONE;
+    //                }
+    //                spriteRIP.setPosition(675, 2000);
+    //                spritePlayer.setPosition(580, 720);
+             /*   }*/
+        //        break;
+        //        case Keyboard::Left:
+        //            if (acceptInput && !isPause)
+        //            {
+        //                chop.play();
+        //                {
+        //                    playerSide = side::LEFT;
+        //                    ++score;
 
-                            timeRemaining += (2.f / score) + 0.15f; //현재 스코어가 커질수록 채워지는 시간이 줄어듬
-                            if (timeRemaining > timeMax)
-                            {
-                                timeRemaining = timeMax;
-                            }
-                            spriteAxe.setPosition(AXE_POSITION_LEFT, spriteAxe.getPosition().y);
+        //                    timeRemaining += (2.f / score) + 0.15f; //현재 스코어가 커질수록 채워지는 시간이 줄어듬
+        //                    if (timeRemaining > timeMax)
+        //                    {
+        //                        timeRemaining = timeMax;
+        //                    }
+        //                    spriteAxe.setPosition(AXE_POSITION_LEFT, spriteAxe.getPosition().y);
 
-                            spritePlayer.setPosition(580, 720);
+        //                    spritePlayer.setPosition(580, 720);
 
-                            UpdateBranches(sideBranches, countBranches, gen);
+        //                    UpdateBranches(sideBranches, countBranches, gen);
 
-                            spriteLog.setPosition(810, 720);
+        //                    spriteLog.setPosition(810, 720);
 
-                            logSpeedX = 5000;
-                            logActive = true;
+        //                    logSpeedX = 5000;
+        //                    logActive = true;
 
-                            acceptInput = false;
-                        }
-                    }
-                    break;
-                case Keyboard::Right:
-                    if (acceptInput && !isPause)
-                    {
-                        chop.play();
-                        {
-                            playerSide = side::RIGHT;
-                            ++score;
+        //                    acceptInput = false;
+        //                }
+        //            }
+        //            break;
+        //        case Keyboard::Right:
+        //            if (acceptInput && !isPause)
+        //            {
+        //                chop.play();
+        //                {
+        //                    playerSide = side::RIGHT;
+        //                    ++score;
 
-                            timeRemaining += (2.f / score) + 0.15f; //현재 스코어가 커질수록 채워지는 시간이 줄어듬
-                            if (timeRemaining > timeMax)
-                            {
-                                timeRemaining = timeMax;
-                            }
-                            spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y);
+        //                    timeRemaining += (2.f / score) + 0.15f; //현재 스코어가 커질수록 채워지는 시간이 줄어듬
+        //                    if (timeRemaining > timeMax)
+        //                    {
+        //                        timeRemaining = timeMax;
+        //                    }
+        //                    spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y);
 
-                            spritePlayer.setPosition(1200, 720);
+        //                    spritePlayer.setPosition(1200, 720);
 
-                            UpdateBranches(sideBranches, countBranches, gen);
+        //                    UpdateBranches(sideBranches, countBranches, gen);
 
-                            spriteLog.setPosition(810, 720);
+        //                    spriteLog.setPosition(810, 720);
 
-                            logSpeedX = -5000;
-                            logActive = true;
+        //                    logSpeedX = -5000;
+        //                    logActive = true;
 
-                            acceptInput = false;
-                        }
-                    }
-                    break;
-                default:
-                    break;
-                }
-                break;
-            case Event::KeyReleased:
-                if (event.key.code == Keyboard::Left || event.key.code == Keyboard::Right)
-                {
-                    if (!isPause)
-                    {
-                        acceptInput = true;
-                        spriteAxe.setPosition(2000, spriteAxe.getPosition().y);
-                    }
+        //                    acceptInput = false;
+        //                }
+        //            }
+        //            break;
+        //        default:
+        //            break;
+        //        }
+        //        break;
+        //    case Event::KeyReleased:
+        //        if (event.key.code == Keyboard::Left || event.key.code == Keyboard::Right)
+        //        {
+        //            if (!isPause)
+        //            {
+        //                acceptInput = true;
+        //                spriteAxe.setPosition(2000, spriteAxe.getPosition().y);
+        //            }
 
-                }
-                break;
-            default:
-                break;
-            }
-        }
+        //        }
+        //        break;
+        //    default:
+        //        break;
+        //    }
+        //}
 
         // 업데이트
 

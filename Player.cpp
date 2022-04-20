@@ -13,3 +13,8 @@ Sprite Player::GetSpritePlayer()
 {
 	return spritePlayer;
 }
+
+void Player::SetSide(side _byside)
+{
+	playerSide = _byside;
+}
