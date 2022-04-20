@@ -19,7 +19,6 @@ public :
 
 private:
 	int selectedItemIndex;
-	RectangleShape choice[MAX_NUMBER_OF_ITEMS];
-	
+	RectangleShape choice[MAX_NUMBER_OF_ITEMS];	
 };
 
