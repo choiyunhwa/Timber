@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML_template", "SFML_template.vcxproj", "{08958A66-3F4B-4028-A6B0-8268B01CB4E5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "timber", "SFML_template.vcxproj", "{08958A66-3F4B-4028-A6B0-8268B01CB4E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

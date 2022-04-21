@@ -50,6 +50,7 @@ int main()
     textMessage.setFont(fontKOMIKAP);
     Text textScore;
     textScore.setFont(fontKOMIKAP);
+    
 
     textMessage.setString("Press Enter to start!"); // 글씨 입력
     textScore.setString("Score = 0");
@@ -67,6 +68,28 @@ int main()
         textRect.left + textRect.width * 0.5f,
         textRect.top + textRect.height * 0.5f
     );
+
+    /*Text showTitle1;
+    showTitle1.setString("TIMBER");
+    showTitle1.setFont(fontKOMIKAP);
+    showTitle1.setCharacterSize(100);
+    showTitle1.setFillColor(Color::Yellow);
+    showTitle1.setPosition(780, 200);
+
+    Text showTitle2;
+    showTitle2.setString("MAN");
+    showTitle2.setFont(fontKOMIKAP);
+    showTitle2.setCharacterSize(90);
+    showTitle2.setFillColor(Color::Yellow);
+    showTitle2.setPosition(890, 300);
+    
+    bool ready = false;
+ */
+   
+
+
+
+
 
     textMessage.setPosition(1920 * 0.5f, 1080 * 0.5f); // 초기화가 됨
 
@@ -223,7 +246,6 @@ int main()
                 case Keyboard::Return:
                 {
                     isPause = false;
-
                     score = 0;
                     timeRemaining = timeMax;
                     acceptInput = true;
@@ -292,6 +314,9 @@ int main()
                         }
                     }
                     break;
+                /*case Keyboard::Space:
+                    ready = true;
+                    break;*/
                 default:
                     break;
                 }
@@ -502,12 +527,21 @@ int main()
         window.draw(spriteRIP);
         window.draw(spriteBee);
         // ui
+        
         window.draw(textScore);
-
-        if (isPause)
+       /* if (!ready)
         {
-            window.draw(textMessage);
-        }
+            window.draw(showTitle1);
+            window.draw(showTitle2);
+        }*/
+            if (isPause/* && ready*/)
+            {
+
+
+                window.draw(textMessage);
+
+            }
+       
         window.draw(timerBar);
         window.display();
     }
