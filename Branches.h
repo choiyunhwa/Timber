@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "side.h"
 #include "GraphicsManager.h"
+#include "Framework.h"
 
 using namespace sf;
 class Branches
