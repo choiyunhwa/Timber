@@ -4,6 +4,8 @@ void Player::initializePlayer()
 {
 	GraphicsManager set;
 	set.initializerGraphics();
+	playerAxe.initializeAxe();
+
 	spritePlayer.setTexture(set.GetText(GraphicsID::texturePlayer));
 	spritePlayer.setPosition(580, 720);
 	playerSide = side::LEFT;

@@ -11,8 +11,6 @@ int main()
 		mainLoop.Update();
 
 		mainLoop.Draw();
-
-		mainLoop.Release();
 	}
 
 	return 0;

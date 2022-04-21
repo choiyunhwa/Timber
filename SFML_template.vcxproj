@@ -162,8 +162,10 @@
     <ClCompile Include="newmain.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RIP.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="Title.cpp" />
     <ClCompile Include="Tree.cpp" />
     <ClCompile Include="UiManager.cpp" />
   </ItemGroup>
@@ -177,11 +179,13 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RIP.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="sceneID.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="side.h" />
     <ClInclude Include="SoundID.h" />
     <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="Title.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UiManager.h" />
     <ClInclude Include="GraphicsID.h" />

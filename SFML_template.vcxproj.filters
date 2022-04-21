@@ -31,6 +31,12 @@
     <Filter Include="헤더 파일\Object">
       <UniqueIdentifier>{61f8870f-4c7b-4475-ad60-942a8591f39f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{62e5f369-f762-4362-b2d5-834b91599d21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Scene">
+      <UniqueIdentifier>{47d9b288-8559-47b2-ba8d-dcea9e45614a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameManager.cpp">
@@ -77,6 +83,12 @@
     </ClCompile>
     <ClCompile Include="Tree.cpp">
       <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>소스 파일\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +142,12 @@
     </ClInclude>
     <ClInclude Include="Tree.h">
       <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>헤더 파일\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
