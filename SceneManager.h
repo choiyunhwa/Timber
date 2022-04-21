@@ -2,6 +2,11 @@
 #include "sceneID.h"
 #include "GameManager.h"
 #include "Scene.h"
+#include "Title.h"
+#include "MENU.h"
+#include "SelectCharacter.h"
+#include "Gamemode.h"
+#include "GamePlay.h"
 
 class SceneManager
 {
@@ -11,8 +16,11 @@ private:
 	Scene* scene;
 
 public:
+	SceneManager();
 	SceneID GetCurrScene();
 	void ChangeScene(SceneID _sceneID);
-	void playScene(SceneID _sceneID);
+	Scene* playScene();
+
+	~SceneManager();
 };
 

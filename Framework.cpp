@@ -9,5 +9,10 @@ void Framework::Initialize()
 
 void Framework::Update()
 {
-   
+	scene.playScene()->Update();
+}
+
+void Framework::Draw()
+{
+	scene.playScene()->Draw();
 }

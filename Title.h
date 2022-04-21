@@ -2,8 +2,8 @@
 #include "Scene.h"
 class Title : public Scene
 {
-private:
+public:
 	void Update();
-
+	void Draw();
 };
 

@@ -37,6 +37,12 @@
     <Filter Include="헤더 파일\Scene">
       <UniqueIdentifier>{47d9b288-8559-47b2-ba8d-dcea9e45614a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Gamemod">
+      <UniqueIdentifier>{c622f484-2347-4a0a-9823-0f693b5694b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Gamemod">
+      <UniqueIdentifier>{3b1a82aa-2340-43ba-9217-621ca49ddada}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameManager.cpp">
@@ -84,11 +90,29 @@
     <ClCompile Include="Tree.cpp">
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>소스 파일\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Title.cpp">
       <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MENU.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Gamemode.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectCharacter.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlay.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Gamemod.cpp">
+      <Filter>소스 파일\Gamemod</Filter>
+    </ClCompile>
+    <ClCompile Include="Gamemod_LocalMulti2player.cpp">
+      <Filter>소스 파일\Gamemod</Filter>
+    </ClCompile>
+    <ClCompile Include="Gamemod_singlemod.cpp">
+      <Filter>소스 파일\Gamemod</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +172,30 @@
     </ClInclude>
     <ClInclude Include="Title.h">
       <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Gamemode.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MENU.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectCharacter.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlay.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Gamemod.h">
+      <Filter>헤더 파일\Gamemod</Filter>
+    </ClInclude>
+    <ClInclude Include="Gamemod_LocalMulti2player.h">
+      <Filter>헤더 파일\Gamemod</Filter>
+    </ClInclude>
+    <ClInclude Include="Gamemod_singlemod.h">
+      <Filter>헤더 파일\Gamemod</Filter>
+    </ClInclude>
+    <ClInclude Include="GamemodID.h">
+      <Filter>헤더 파일\enum</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

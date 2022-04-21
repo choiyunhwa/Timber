@@ -153,17 +153,23 @@
     <ClCompile Include="Branches.cpp" />
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Gamemod.cpp" />
+    <ClCompile Include="Gamemode.cpp" />
+    <ClCompile Include="Gamemod_LocalMulti2player.cpp" />
+    <ClCompile Include="Gamemod_singlemod.cpp" />
+    <ClCompile Include="GamePlay.cpp" />
     <ClCompile Include="GraphicsManager.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="MENU.cpp" />
     <ClCompile Include="newmain.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RIP.cpp" />
-    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SelectCharacter.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="Tree.cpp" />
@@ -175,13 +181,21 @@
     <ClInclude Include="Branches.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Gamemod.h" />
+    <ClInclude Include="Gamemode.h" />
+    <ClInclude Include="GamemodID.h" />
+    <ClInclude Include="Gamemod_LocalMulti2player.h" />
+    <ClInclude Include="Gamemod_singlemod.h" />
+    <ClInclude Include="GamePlay.h" />
     <ClInclude Include="GraphicsManager.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="MENU.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RIP.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="sceneID.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SelectCharacter.h" />
     <ClInclude Include="side.h" />
     <ClInclude Include="SoundID.h" />
     <ClInclude Include="SoundManager.h" />
