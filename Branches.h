@@ -9,15 +9,14 @@ class Branches
 {
 private:
 	const int countBranches = 6;
-	Sprite * spriteBranches;
-	side * sideBranches;
+	Sprite  spriteBranches;
+	side  sideBranches[6];
 public:
-	Branches();
-	~Branches();
+    Branches();
+	Branches(GraphicsManager _graphics);
 
-	void InitializeBranches();
 	const int GetCountBranches();
-	Sprite* GetBranchesArray();
+	Sprite GetBranches();
 	side* GetSideBranchesArray();
 
     void UpdateBranches(side sides[], int length, mt19937& gen)
@@ -41,6 +40,5 @@ public:
             break;
         }
     }
-
 };
 

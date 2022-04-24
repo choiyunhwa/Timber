@@ -1,13 +1,5 @@
 #include "Title.h"
 
-void Title::Update(UiManager &ui)
+Title::Title()
 {
-	//title 업데이트
-
-}
-
-void Title::Draw()
-{
-	//title draw
-
 }

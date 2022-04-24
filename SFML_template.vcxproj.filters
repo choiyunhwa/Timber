@@ -66,9 +66,6 @@
     <ClCompile Include="UiManager.cpp">
       <Filter>소스 파일\Framework\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일\Main</Filter>
-    </ClCompile>
     <ClCompile Include="newmain.cpp">
       <Filter>소스 파일\Main</Filter>
     </ClCompile>
@@ -119,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="Framework.cpp">
       <Filter>소스 파일\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

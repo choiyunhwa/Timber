@@ -7,9 +7,7 @@ SceneID SceneManager::GetCurrScene()
 
 SceneManager::SceneManager()
 {
-    scene = new Title;
-
-	
+	scene = new Title;
 }
 
 void SceneManager::ChangeScene(SceneID _sceneID)
@@ -22,17 +20,17 @@ void SceneManager::ChangeScene(SceneID _sceneID)
 	case SceneID::TITLE:
 		scene = new Title;
 		break;
-	case SceneID::MENU:
-		scene = new MENU;
-		break;
-	case SceneID::GAMEMODE:
-		scene = new Gamemode;
-		break;
-	case SceneID::SELECTCHARACTOR:
-		scene = new SelectCharacter;
-		break;
-	case SceneID::GAMEPLAY:
-		scene = new GamePlay;
+	//case SceneID::MENU:
+	//	scene = new MENU;
+	//	break;
+	//case SceneID::GAMEMODE:
+	//	scene = new Gamemode;
+	//	break;
+	//case SceneID::SELECTCHARACTOR:
+	//	scene = new SelectCharacter;
+	//	break;
+	//case SceneID::GAMEPLAY:
+	//	scene = new GamePlay;
 		break;
 	}
 }
@@ -45,11 +43,9 @@ Scene* SceneManager::playScene()
 SceneManager::~SceneManager()
 {
 	delete scene;
-	delete Gamemod;
 }
 
 void SceneManager::SetGamemod(GamemodID _setId)
 {
-	d Gamemod
-	Gamemod = new 
+	GameManager.SelectGamemod(_setId);
 }

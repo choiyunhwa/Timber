@@ -1,12 +1,14 @@
 #include "Axe.h"
 
-void Axe::initializeAxe()
+
+
+Axe::Axe(GraphicsManager graphics)
 {
-	GraphicsManager set;
-	set.initializerGraphics();
-	
-	spriteAxe.setTexture(set.GetText(GraphicsID::textureAxe));
-	spriteAxe.setPosition(700, 830);
+	spriteAxe.setTexture(graphics.GetTexture(GraphicsID::textureAxe));
+}
+
+Axe::Axe()
+{
 }
 
 const float Axe::GetAXE_POSITION_LEFT()
@@ -17,6 +19,12 @@ const float Axe::GetAXE_POSITION_LEFT()
 const float Axe::GetAXE_POSITION_RIGHT()
 {
 	return AXE_POSITION_RIGHT;
+}
+
+void Axe::SetAxePosition(float _left, float _right)
+{
+	AXE_POSITION_LEFT = _left;
+	AXE_POSITION_RIGHT = _right;
 }
 
 Sprite Axe::GetSpriteAxe()

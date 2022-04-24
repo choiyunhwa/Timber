@@ -10,7 +10,10 @@ private:
 	Sprite spriteRIP;
 	
 public:
-	void initializeRIP();
+	RIP(GraphicsManager _grapics);
+
+	void SetRIPPos(Vector2f _deadPlayPos);
+
 	Sprite GetspriteRIP();
 };
 

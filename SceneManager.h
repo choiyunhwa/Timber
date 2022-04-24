@@ -16,8 +16,10 @@ private:
 	GameManager GameManager;
 	Scene* scene;
 
-	SceneManager();
+	
 public:
+	SceneManager();
+
 	SceneID GetCurrScene();
 	void ChangeScene(SceneID _sceneID);
 	Scene* playScene();

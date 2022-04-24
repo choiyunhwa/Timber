@@ -12,24 +12,20 @@ using namespace std;
 class Framework
 {
 private:
-	RenderWindow window;
+	SceneManager currScene;
+	SoundManager sound;
+	GraphicsManager graphics;
+	UiManager Ui;
 
-	random_device rd;
-	mt19937 gen;
-	
+	VideoMode vm;
+	RenderWindow window = { vm,"Timber!",Style::Default };
+
 	bool isPause;
 	bool acceptInput;
 
-	Clock clock;
-	
-	GraphicsManager graphics;
-	SceneManager scene;
-	SoundManager sound;
-	UiManager Ui;
-
-
 public:
-
+	Framework();
+	
 	void Initialize();
 
 	void Update();

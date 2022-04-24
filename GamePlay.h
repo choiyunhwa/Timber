@@ -1,9 +1,15 @@
 #pragma once
 #include "Scene.h"
+#include "Gamemod.h"
+#include "GamemodID.h"
+#include "Gamemod_singlemod.h"
+#include "Gamemod_LocalMulti2player.h"
+
 class GamePlay : public Scene
 {
-	//gameplay 에 대한 기능을 하되
-	// scene 메니저에서 받아오는 게임 모드에 대한 정보를 가져와서 사용하게 하기.
-
+private:
+	Gamemod* mod;
+public:
+	GamePlay(GamemodID _ID);
 };
 

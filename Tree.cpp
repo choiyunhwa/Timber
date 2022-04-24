@@ -1,13 +1,13 @@
 #include "Tree.h"
 
-void Tree::InitializeTree()
-{
-	GraphicsManager set;
-	set.initializerGraphics();
-	TreeBranches.InitializeBranches();
 
-	spriteTree.setTexture(set.GetText(GraphicsID::textureTree));
-	spriteTree.setPosition(810, 0);
+Tree::Tree(GraphicsManager _graphics)
+{
+	spriteTree.setTexture(_graphics.GetTexture(GraphicsID::textureTree));
+	
+	log = _graphics;
+
+	
 }
 
 Sprite Tree::GetspriteTree()

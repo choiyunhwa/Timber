@@ -16,7 +16,7 @@ private:
 	Texture textureTree;
 public:
 	void initializerGraphics();
-	Texture GetText(GraphicsID _id);
+	Texture GetTexture(GraphicsID _id);
 
 
 };

@@ -1,12 +1,19 @@
 #include "Player.h"
 
+Player::Player(GraphicsManager _graphics)
+{
+	spritePlayer.setTexture(_graphics.GetTexture(GraphicsID::texturePlayer));
+	playerAxe = _graphics;
+	playerSide = side::LEFT;
+
+	playerAxe.SetAxePosition(700, 1075);
+
+
+}
+
 void Player::initializePlayer()
 {
-	GraphicsManager set;
-	set.initializerGraphics();
-	playerAxe.initializeAxe();
-
-	spritePlayer.setTexture(set.GetText(GraphicsID::texturePlayer));
+	
 	spritePlayer.setPosition(580, 720);
 	playerSide = side::LEFT;
 }

@@ -61,6 +61,11 @@ void UiManager::SetScore(int _score)
     score = _score;
 }
 
+void UiManager::SetMassage(const char* _str)
+{
+    textMessage.setString(_str);
+}
+
 const float UiManager::GetTimeMax()
 {
     return timeMax;

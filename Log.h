@@ -8,11 +8,14 @@ class Log
 {
 private:
 	Sprite spritelog;
+
 	bool logActive; 
 	float logSpeedX;
 	float logSpeedY;
 public:
-	void InitializeLog();
+	Log();
+	Log(GraphicsManager _graphics);
+
 	Sprite GetSpriteLog();
 
 	void SetLogActive(bool _check);

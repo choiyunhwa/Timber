@@ -7,7 +7,7 @@
 class GameManager
 {
 private:
-	Gamemod* currGamemod;
+	Gamemod currGamemod;
 public:
 	GameManager();
 	void SelectGamemod(GamemodID _select);

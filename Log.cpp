@@ -1,11 +1,12 @@
 #include "Log.h"
 
-void Log::InitializeLog()
+Log::Log()
 {
-	GraphicsManager set;
-	set.initializerGraphics();
-	spritelog.setTexture(set.GetText(GraphicsID::textureLog));
-	spritelog.setPosition(810, 720);
+}
+
+Log::Log(GraphicsManager _graphics)
+{
+	spritelog.setTexture(_graphics.GetTexture(GraphicsID::textureLog));
 
 	logActive = false;
 	logSpeedX = 1000;

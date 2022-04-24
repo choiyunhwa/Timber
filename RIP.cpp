@@ -1,12 +1,14 @@
 #include "RIP.h"
 
-void RIP::initializeRIP()
-{
-	GraphicsManager set;
-	set.initializerGraphics();
 
-	spriteRIP.setTexture(set.GetText(GraphicsID::textureRIP));
-	spriteRIP.setPosition(600, 860);
+RIP::RIP(GraphicsManager _grapics)
+{
+	spriteRIP.setTexture(_grapics.GetTexture(GraphicsID::textureRIP));
+}
+
+void RIP::SetRIPPos(Vector2f _deadPlayPos)
+{
+	spriteRIP.setPosition(_deadPlayPos);
 }
 
 Sprite RIP::GetspriteRIP()

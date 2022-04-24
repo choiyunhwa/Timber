@@ -11,7 +11,9 @@ private:
 	bool moveActivate[4];
 	float moveSpeed[4];
 public:
-	void InitializeBackground();
+	Background(GraphicsManager _graphics);
+	Background();
+
 	Sprite GetBackground();
 	Sprite* moveObjectArray();
 	bool* moveActivateArray();

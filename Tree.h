@@ -3,6 +3,7 @@
 #include "side.h"
 #include "GraphicsManager.h"
 #include "Branches.h"
+#include "Log.h"
 
 using namespace sf;
 class Tree
@@ -10,8 +11,9 @@ class Tree
 private:
 	Sprite spriteTree;
 	Branches TreeBranches;
+	Log log;
 public:
-	void InitializeTree();
+	Tree(GraphicsManager _graphics);
 	Sprite GetspriteTree();
 };
 

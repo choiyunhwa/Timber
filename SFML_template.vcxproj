@@ -160,14 +160,11 @@
     <ClCompile Include="GamePlay.cpp" />
     <ClCompile Include="GraphicsManager.cpp" />
     <ClCompile Include="Log.cpp" />
-    <ClCompile Include="main.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="MENU.cpp" />
     <ClCompile Include="newmain.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RIP.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SelectCharacter.cpp" />
     <ClCompile Include="SoundManager.cpp" />

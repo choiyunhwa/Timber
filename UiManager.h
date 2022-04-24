@@ -29,6 +29,7 @@ public:
 
 	int GetScore();
 	void SetScore(int _score);
+	void SetMassage(const char* _str);
 
 	const float GetTimeMax();
 

@@ -1,14 +1,18 @@
 #pragma once
+#include "Framework.h"
 #include "Scene.h"
 #include "UiManager.h"
+#include "GameManager.h"
+#include "Background.h"
 
 class Title : public Scene
 {
-public:
-	void Update(UiManager& ui);
-	
-	void Draw();
+private:
+	Background background;
+	UiManager Ui;
 
-	//시작할때 출력되는 화면, 키입력시 메뉴로 이동하게 하기. scene manager에 있는 chnageScene을 통해서 바꿔줘야해요~.
+public:
+	Title();
+	
 };
 

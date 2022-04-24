@@ -14,7 +14,7 @@ void GraphicsManager::initializerGraphics()
 
 }
 
-Texture GraphicsManager::GetText(GraphicsID _id)
+Texture GraphicsManager::GetTexture(GraphicsID _id)
 {
 	switch (_id)
 	{
