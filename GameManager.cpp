@@ -1,5 +1,12 @@
 #include "GameManager.h"
 
+
+
+GameManager::GameManager()
+{
+	currGamemod = new Gamemod_singlemod;
+}
+
 void GameManager::SelectGamemod(GamemodID _select)
 {
 	delete currGamemod;

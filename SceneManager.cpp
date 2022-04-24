@@ -8,7 +8,8 @@ SceneID SceneManager::GetCurrScene()
 SceneManager::SceneManager()
 {
     scene = new Title;
-	Gamemod = nullptr;
+
+	
 }
 
 void SceneManager::ChangeScene(SceneID _sceneID)
@@ -26,7 +27,6 @@ void SceneManager::ChangeScene(SceneID _sceneID)
 		break;
 	case SceneID::GAMEMODE:
 		scene = new Gamemode;
-
 		break;
 	case SceneID::SELECTCHARACTOR:
 		scene = new SelectCharacter;
@@ -46,4 +46,10 @@ SceneManager::~SceneManager()
 {
 	delete scene;
 	delete Gamemod;
+}
+
+void SceneManager::SetGamemod(GamemodID _setId)
+{
+	d Gamemod
+	Gamemod = new 
 }
