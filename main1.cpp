@@ -1,4 +1,4 @@
-ï»¿#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <random>
 #include <sstream>
 #include <SFML/Audio.hpp>
@@ -13,7 +13,8 @@ enum class side
     NONE
 };
 
-//ë‚˜ë¬´ê°€ì§€ë¥¼ í•œì¹¸ì”© ë‚´ë ¤ì¤Œ
+
+//³ª¹«°¡Áö¸¦ ÇÑÄ­¾¿ ³»·ÁÁÜ
 void UpdateBranches(side sides[], int length, mt19937& gen)
 {
     for (int i = length - 1; i >= 0; --i)
@@ -36,74 +37,164 @@ void UpdateBranches(side sides[], int length, mt19937& gen)
     }
 }
 
-
-
 int main()
 {
+
+
     random_device rd;   // non-deterministic generator
     mt19937 gen(rd());  // to seed mersenne twister.
 
-    VideoMode vm(1920, 1080); //í•´ìƒë„ ì •ë³´ê°€ ë“¤ì–´ìˆìŒ(ì¶”ê°€ë¡œ ë‹¤ë¥¸ ì¸ìë¥¼ ê°€ì§€ê³  ì˜¬ ìˆ˜ ìˆìŒ
+    VideoMode vm(1920, 1080); //ÇØ»óµµ Á¤º¸°¡ µé¾îÀÖÀ½(Ãß°¡·Î ´Ù¸¥ ÀÎÀÚ¸¦ °¡Áö°í ¿Ã ¼ö ÀÖÀ½
     RenderWindow window(vm, "Timber!", Style::Default);
 
     Font fontKOMIKAP;
-    fontKOMIKAP.loadFromFile("fonts/KOMIKAP_.ttf"); //í°íŠ¸ íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸°
+    fontKOMIKAP.loadFromFile("fonts/KOMIKAP_.ttf"); //ÆùÆ® ÆÄÀÏ ºÒ·¯¿À±â
+    
+    /*----------------------------------------------------------------------------*/
+    /*---------------------------------MENU-------------------------------------*/
+    /*----------------------------------------------------------------------------*/
+    bool menuOn = true;
 
-    Text textMessage; //í°íŠ¸ë¥¼ ë“œë¡œìš° í•˜ëŠ” ê³¼ì •?
+    Text menu[4];
+    menu[0].setFont(fontKOMIKAP);
+    menu[1].setFont(fontKOMIKAP);
+    menu[2].setFont(fontKOMIKAP);
+    menu[3].setFont(fontKOMIKAP);
+
+    menu[0].setCharacterSize(30);
+    menu[1].setCharacterSize(30);
+    menu[2].setCharacterSize(30);
+    menu[3].setCharacterSize(30);
+
+    menu[0].setPosition(1920.f * 0.5 - 100, 500);
+    menu[1].setPosition(1920.f * 0.5 - 100  ,600);
+    menu[2].setPosition(1920.f * 0.5 - 100  ,700);
+    menu[3].setPosition(1920.f * 0.5 - 100 ,800);
+
+    menu[0].setFillColor(Color (85, 58, 28,255));
+    menu[1].setFillColor(Color(85, 58, 28, 255));
+    menu[2].setFillColor(Color(85, 58, 28, 255));
+    menu[3].setFillColor(Color(85, 58, 28, 255));
+
+
+    menu[0].setString("Play");
+    menu[1].setString("Game mode");
+    menu[2].setString("Characters");
+    menu[3].setString("Exit");
+
+    RectangleShape menuBox[4];
+    menuBox[0].setFillColor(Color(252, 241, 207,255));
+    menuBox[1].setFillColor(Color(252, 241, 207, 255));
+    menuBox[2].setFillColor(Color(252, 241, 207, 255));
+    menuBox[3].setFillColor(Color(252, 241, 207, 255));
+
+    menuBox[0].setSize(Vector2f(200, 50));
+    menuBox[1].setSize(Vector2f(200,50));
+    menuBox[2].setSize(Vector2f(200, 50));
+    menuBox[3].setSize(Vector2f(200, 50));
+
+    menuBox[0].setPosition(1920.f * 0.5 - 100, 500);
+    menuBox[1].setPosition(1920.f * 0.5 - 100, 600);
+    menuBox[2].setPosition(1920.f * 0.5 - 100, 700);
+    menuBox[3].setPosition(1920.f * 0.5 - 100, 800);
+
+
+
+
+    int menuIndex = 0;
+    menuBox[menuIndex].setFillColor(Color(180, 180, 80, 255));
+
+
+    int SelIndex = 0;
+    bool selModeOn = false;
+    Text selCh[2];
+     RectangleShape selGame[2];
+
+     selCh[0].setFont(fontKOMIKAP);
+     selCh[1].setFont(fontKOMIKAP);
+
+     selCh[0].setCharacterSize(30);
+     selCh[1].setCharacterSize(30);
+
+     selCh[0].setPosition(1920.f * 0.5 - 100, 600);
+     selCh[1].setPosition(1920.f * 0.5 - 100, 700);
+
+     selCh[0].setFillColor(Color(85, 58, 28, 255));
+     selCh[1].setFillColor(Color(85, 58, 28, 255));
+
+     selCh[0].setString("Solo");
+     selCh[1].setString("Dual");
+
+
+    selGame[0].setFillColor(Color(252, 241, 207, 255));
+    selGame[0].setSize(Vector2f(200, 50));
+    selGame[0].setPosition(1920.f * 0.5 - 100, 600);
+
+    selGame[1].setFillColor(Color(252, 241, 207, 255));
+    selGame[1].setSize(Vector2f(200, 50));
+    selGame[1].setPosition(1920.f * 0.5 - 100, 700);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*----------------------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------*/
+
+
+    Text textMessage; //ÆùÆ®¸¦ µå·Î¿ì ÇÏ´Â °úÁ¤?
     textMessage.setFont(fontKOMIKAP);
     Text textScore;
     textScore.setFont(fontKOMIKAP);
-    
 
-    textMessage.setString("Press Enter to start!"); // ê¸€ì”¨ ì…ë ¥
+
+    textMessage.setString("Press Enter to start!"); // ±Û¾¾ ÀÔ·Â
     textScore.setString("Score = 0");
 
-    textMessage.setCharacterSize(75); //í°íŠ¸ì‚¬ì´ì¦ˆ
+    textMessage.setCharacterSize(75); //ÆùÆ®»çÀÌÁî
     textScore.setCharacterSize(100);
 
-    textMessage.setFillColor(Color::White); //ê¸€ì”¨ ìƒ‰ìƒ ì§€ì •
+    textMessage.setFillColor(Color::White); //±Û¾¾ »ö»ó ÁöÁ¤
     textScore.setFillColor(Color::White);
 
     textScore.setPosition(20, 20);
 
-    FloatRect textRect = textMessage.getLocalBounds(); //êµ¬ì¡°ì²´ - ì¤‘ì•™ì  ê³„ì‚°
+    FloatRect textRect = textMessage.getLocalBounds(); //±¸Á¶Ã¼ - Áß¾ÓÁ¡ °è»ê
     textMessage.setOrigin(
         textRect.left + textRect.width * 0.5f,
         textRect.top + textRect.height * 0.5f
     );
 
-    Text showTitle1;
-    showTitle1.setString("TIMBER");
-    showTitle1.setFont(fontKOMIKAP);
-    showTitle1.setCharacterSize(100);
-    showTitle1.setFillColor(Color::Yellow);
-    showTitle1.setPosition(780, 200);
-
-    Text showTitle2;
-    showTitle2.setString("MAN");
-    showTitle2.setFont(fontKOMIKAP);
-    showTitle2.setCharacterSize(90);
-    showTitle2.setFillColor(Color::Yellow);
-    showTitle2.setPosition(890, 300);
-    
-    bool ready = false;
- 
-   
 
 
 
 
-
-
-
-
-
-    textMessage.setPosition(1920 * 0.5f, 1080 * 0.5f); // ì´ˆê¸°í™”ê°€ ë¨
+    textMessage.setPosition(1920 * 0.5f, 1080 * 0.5f); // ÃÊ±âÈ­°¡ µÊ
 
     Texture textureBackground;
-    textureBackground.loadFromFile("graphics/background.png"); //í…ìŠ¤ì²˜ ë¡œë“œ
+    textureBackground.loadFromFile("graphics/background.png"); //ÅØ½ºÃ³ ·Îµå
 
-    Sprite spriteBackground;//ë“œë¡œìš° í•˜ëŠ” ê³¼ì •ì„ ë‹´ë‹¹
+    Sprite spriteBackground;//µå·Î¿ì ÇÏ´Â °úÁ¤À» ´ã´ç
     spriteBackground.setTexture(textureBackground);
     spriteBackground.setPosition(0, 0);
 
@@ -122,7 +213,7 @@ int main()
     spriteCloud3.setTexture(textureCloud);
     spriteCloud3.setPosition(2000, 0);
 
-    bool cloudActive = false; // ìƒíƒœë¥¼ í‘œí˜„í•˜ëŠ” ë³€ìˆ˜ ( í™”ë©´ ì•ˆì— ìˆì„ë•Œ true, í™”ë©´ ë°–ì—ìˆì„ë•Œ false )//ì‹œì‘í•˜ëŠ” ìœ„ì¹˜ //í”Œë˜ê·¸ ë³€ìˆ˜
+    bool cloudActive = false; // »óÅÂ¸¦ Ç¥ÇöÇÏ´Â º¯¼ö ( È­¸é ¾È¿¡ ÀÖÀ»¶§ true, È­¸é ¹Û¿¡ÀÖÀ»¶§ false )//½ÃÀÛÇÏ´Â À§Ä¡ //ÇÃ·¡±× º¯¼ö
     float clodeSpeed = 0.f;
 
     Texture textureBee;
@@ -132,7 +223,7 @@ int main()
     spriteBee.setTexture(textureBee);
     spriteBee.setPosition(2000, 0);
 
-    bool beeActive = false; // ìƒíƒœë¥¼ í‘œí˜„í•˜ëŠ” ë³€ìˆ˜ ( í™”ë©´ ì•ˆì— ìˆì„ë•Œ true, í™”ë©´ ë°–ì—ìˆì„ë•Œ false )//ì‹œì‘í•˜ëŠ” ìœ„ì¹˜ //í”Œë˜ê·¸ ë³€ìˆ˜
+    bool beeActive = false; // »óÅÂ¸¦ Ç¥ÇöÇÏ´Â º¯¼ö ( È­¸é ¾È¿¡ ÀÖÀ»¶§ true, È­¸é ¹Û¿¡ÀÖÀ»¶§ false )//½ÃÀÛÇÏ´Â À§Ä¡ //ÇÃ·¡±× º¯¼ö
     float beeSpeed = 0.f;
 
     RectangleShape timerBar;
@@ -145,7 +236,7 @@ int main()
     timerBar.setPosition(timerPos);
     timerBar.setFillColor(Color::Red);
 
-    //ê°€ì§€
+    //°¡Áö
     Texture textureBranch;
     textureBranch.loadFromFile("graphics/branch.png");
 
@@ -161,11 +252,11 @@ int main()
         sideBranches[i] = side::NONE;
     }
 
-    bool isPause = true; // true : ì¼ì‹œì •ì§€ 
+    bool isPause = true; // true : ÀÏ½ÃÁ¤Áö 
 
     int score = 100;
     const float timeMax = 6.0f;
-    float timeRemaining = timeMax; //ë¸íƒ€íƒ€ì„ìœ¼ë¡œ ëºŒ
+    float timeRemaining = timeMax; //µ¨Å¸Å¸ÀÓÀ¸·Î »­
     float timerBarWidthPerSecond = timerBarWidth / timeMax;
 
     // Prepare the player
@@ -219,11 +310,11 @@ int main()
 
 
     // Some other useful log related variables
-    bool logActive = false; //ë„ë¼ë¥¼ ì³¤ì„ë•Œ ë‚ ë¼ê°€ëŠ” í† ë§
+    bool logActive = false; //µµ³¢¸¦ ÃÆÀ»¶§ ³¯¶ó°¡´Â Åä¸Á
     float logSpeedX = 1000;
     float logSpeedY = -1500;
 
-    bool acceptInput = false; //ì…ë ¥ í‚¤
+    bool acceptInput = false; //ÀÔ·Â Å°
 
     Clock clock;
     Texture textureTree;
@@ -235,6 +326,10 @@ int main()
 
     while (window.isOpen())
     {
+
+
+
+
         Time dt = clock.restart();
         Event event;
         while (window.pollEvent(event))
@@ -273,7 +368,7 @@ int main()
                             playerSide = side::LEFT;
                             ++score;
 
-                            timeRemaining += (2.f / score) + 0.15f; //í˜„ì¬ ìŠ¤ì½”ì–´ê°€ ì»¤ì§ˆìˆ˜ë¡ ì±„ì›Œì§€ëŠ” ì‹œê°„ì´ ì¤„ì–´ë“¬
+                            timeRemaining += (2.f / score) + 0.15f; //ÇöÀç ½ºÄÚ¾î°¡ Ä¿Áú¼ö·Ï Ã¤¿öÁö´Â ½Ã°£ÀÌ ÁÙ¾îµë
                             if (timeRemaining > timeMax)
                             {
                                 timeRemaining = timeMax;
@@ -301,7 +396,7 @@ int main()
                             playerSide = side::RIGHT;
                             ++score;
 
-                            timeRemaining += (2.f / score) + 0.15f; //í˜„ì¬ ìŠ¤ì½”ì–´ê°€ ì»¤ì§ˆìˆ˜ë¡ ì±„ì›Œì§€ëŠ” ì‹œê°„ì´ ì¤„ì–´ë“¬
+                            timeRemaining += (2.f / score) + 0.15f; //ÇöÀç ½ºÄÚ¾î°¡ Ä¿Áú¼ö·Ï Ã¤¿öÁö´Â ½Ã°£ÀÌ ÁÙ¾îµë
                             if (timeRemaining > timeMax)
                             {
                                 timeRemaining = timeMax;
@@ -320,9 +415,6 @@ int main()
                             acceptInput = false;
                         }
                     }
-                    break;
-                case Keyboard::Space:
-                    ready = true;
                     break;
                 default:
                     break;
@@ -344,36 +436,103 @@ int main()
             }
         }
 
-        // ì—…ë°ì´íŠ¸
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+
+        if (menuOn && Keyboard::isKeyPressed(Keyboard::Up))
+        {
+            menuIndex--;
+            if (menuIndex < 0)
+                menuIndex = 0;
+            menuBox[menuIndex + 1].setFillColor(Color(252, 241, 207, 255));
+            menuBox[menuIndex].setFillColor(Color(180, 180, 80, 255));
+
+        }
+
+        if (menuOn && Keyboard::isKeyPressed(Keyboard::Down))
+        {
+            menuIndex++;
+            if (menuIndex > 3)
+                menuIndex = 3;
+            menuBox[menuIndex - 1].setFillColor(Color(252, 241, 207, 255));
+            menuBox[menuIndex].setFillColor(Color(180, 180, 80, 255));
+            ;
+        }
+
+        if (menuOn && Keyboard::isKeyPressed(Keyboard::Enter))
+        {
+            if (menuIndex == 1)
+            {
+                menuOn = false;
+                selModeOn = true;
+            }
+        }
+
+
+        if (selModeOn &&  Keyboard::isKeyPressed(Keyboard::Up))
+        {
+            SelIndex--;
+            if (SelIndex < 0)
+                SelIndex = 0;
+            selGame[SelIndex + 1].setFillColor(Color(252, 241, 207, 255));
+            selGame[SelIndex].setFillColor(Color(180, 180, 80, 255));
+        }
+      
+        if (selModeOn && Keyboard::isKeyPressed(Keyboard::Down))
+        {
+            
+            SelIndex++;
+            if (SelIndex > 1)
+            {
+                SelIndex = 1;
+            }
+            if (SelIndex > 0)
+            {
+                selGame[SelIndex - 1].setFillColor(Color(252, 241, 207, 255));
+            }
+            selGame[SelIndex].setFillColor(Color(180, 180, 80, 255));
+        }
+
+        if (selModeOn && Keyboard::isKeyPressed(Keyboard::Enter))
+        {
+          //  selModeOn = false;
+        }
+
+
+
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+
+        // ¾÷µ¥ÀÌÆ®
 
         if (!isPause)
         {
-            //ë²Œ
+            //¹ú
             if (!beeActive)
             {
-                //ë²Œ ì´ˆê¸°í™”
-                beeSpeed = gen() % 200 + 200; //ì†ë„
+                //¹ú ÃÊ±âÈ­
+                beeSpeed = gen() % 200 + 200; //¼Óµµ
                 beeSpeed *= -1.f;
-                float y = gen() % 500 + 500; //yê°’
+                float y = gen() % 500 + 500; //y°ª
                 spriteBee.setPosition(2000, y);
                 beeActive = true;
             }
             else
             {
-                //ë²Œ ì´ë™
-                float deltaX = beeSpeed * dt.asSeconds(); //ì‹œê°„ì„ floatí˜•ìœ¼ë¡œ ë¦¬í„´í•´ì£¼ëŠ” í•¨ìˆ˜ / ì†ë„ * ì‹œê°„
-                Vector2f currPos = spriteBee.getPosition(); // ë²Œì˜ í˜„ì¬ ìœ„ì¹˜ 
+                //¹ú ÀÌµ¿
+                float deltaX = beeSpeed * dt.asSeconds(); //½Ã°£À» floatÇüÀ¸·Î ¸®ÅÏÇØÁÖ´Â ÇÔ¼ö / ¼Óµµ * ½Ã°£
+                Vector2f currPos = spriteBee.getPosition(); // ¹úÀÇ ÇöÀç À§Ä¡ 
                 currPos.x += deltaX;
                 spriteBee.setPosition(currPos);
 
-                //í™”ë©´ ë°–ìœ¼ë¡œ ë‚˜ê°”ëŠ”ì§€ í…ŒìŠ¤íŠ¸
+                //È­¸é ¹ÛÀ¸·Î ³ª°¬´ÂÁö Å×½ºÆ®
                 if (currPos.x < -100)
                 {
                     beeActive = false;
                 }
             }
 
-            //êµ¬ë¦„1
+            //±¸¸§1
             if (!cloudActive)
             {
                 clodeSpeed = gen() % 300 + 100;
@@ -390,14 +549,14 @@ int main()
                 currPos.x += deltaX;
                 spriteCloud1.setPosition(currPos);
 
-                //í™”ë©´ ë°–ìœ¼ë¡œ ë‚˜ê°”ëŠ”ì§€ í…ŒìŠ¤íŠ¸
+                //È­¸é ¹ÛÀ¸·Î ³ª°¬´ÂÁö Å×½ºÆ®
                 if (currPos.x < -100)
                 {
                     cloudActive = false;
                 }
 
             }
-            //êµ¬ë¦„2
+            //±¸¸§2
             if (!cloudActive)
             {
                 clodeSpeed = gen() % 300 + 200;
@@ -413,13 +572,13 @@ int main()
                 currPos.x += deltaX;
                 spriteCloud2.setPosition(currPos);
 
-                //í™”ë©´ ë°–ìœ¼ë¡œ ë‚˜ê°”ëŠ”ì§€ í…ŒìŠ¤íŠ¸
+                //È­¸é ¹ÛÀ¸·Î ³ª°¬´ÂÁö Å×½ºÆ®
                 if (currPos.x < -100)
                 {
                     cloudActive = false;
                 }
             }
-            //êµ¬ë¦„3
+            //±¸¸§3
             if (!cloudActive)
             {
                 clodeSpeed = gen() % 300 + 600;
@@ -435,7 +594,7 @@ int main()
                 currPos.x += deltaX;
                 spriteCloud3.setPosition(currPos);
 
-                //í™”ë©´ ë°–ìœ¼ë¡œ ë‚˜ê°”ëŠ”ì§€ í…ŒìŠ¤íŠ¸
+                //È­¸é ¹ÛÀ¸·Î ³ª°¬´ÂÁö Å×½ºÆ®
                 if (currPos.x < -100)
                 {
                     cloudActive = false;
@@ -458,7 +617,7 @@ int main()
 
                 textMessage.setString("Out of time!!");
 
-                FloatRect textRect = textMessage.getLocalBounds(); //êµ¬ì¡°ì²´ - ì¤‘ì•™ì  ê³„ì‚°
+                FloatRect textRect = textMessage.getLocalBounds(); //±¸Á¶Ã¼ - Áß¾ÓÁ¡ °è»ê
                 textMessage.setOrigin
                 (
                     textRect.left + textRect.width * 0.5f,
@@ -485,8 +644,8 @@ int main()
                     break;
                 }
             }
-            
-            if (logActive) //ì´ë™
+
+            if (logActive) //ÀÌµ¿
             {
                 Vector2f logPos = spriteLog.getPosition();
                 logPos.x += logSpeedX * dt.asSeconds();
@@ -499,7 +658,7 @@ int main()
                     spriteLog.setPosition(810, 720);
                 }
             }
-            if (sideBranches[countBranches - 1] == playerSide) //í”Œë ˆì´ì–´ê°€ ê¹”ë ¤ì„œ ì£½ì„ë•Œ
+            if (sideBranches[countBranches - 1] == playerSide) //ÇÃ·¹ÀÌ¾î°¡ ±ò·Á¼­ Á×À»¶§
             {
                 isPause = true;
                 acceptInput = false;
@@ -507,7 +666,7 @@ int main()
                 spriteRIP.setPosition(525, 760);
 
                 textMessage.setString("SQUISHED!");
-                FloatRect textRect = textMessage.getLocalBounds(); //êµ¬ì¡°ì²´ - ì¤‘ì•™ì  ê³„ì‚°
+                FloatRect textRect = textMessage.getLocalBounds(); //±¸Á¶Ã¼ - Áß¾ÓÁ¡ °è»ê
                 textMessage.setOrigin
                 (
                     textRect.left + textRect.width * 0.5f,
@@ -516,41 +675,58 @@ int main()
                 death.play();
             }
         }
-        // ê·¸ë¦¬ê¸°
+        // ±×¸®±â
         //world
         window.clear();
         window.draw(spriteBackground);
-        //window.draw(spriteCloud1);
-        //window.draw(spriteCloud2);
-        //window.draw(spriteCloud3);
+   /*     window.draw(spriteCloud1);
+        window.draw(spriteCloud2);
+        window.draw(spriteCloud3);*/
+
+        if (menuOn)
+        {
+            window.draw(menuBox[0]);
+            window.draw(menuBox[1]);
+            window.draw(menuBox[2]);
+            window.draw(menuBox[3]);
+
+
+            window.draw(menu[0]);
+            window.draw(menu[1]);
+            window.draw(menu[2]);
+            window.draw(menu[3]);
+        }
+
+        if (selModeOn)
+        {
+            window.draw(selGame[0]);
+            window.draw(selGame[1]);
+            window.draw(selCh[0]);
+            window.draw(selCh[1]);
+        }
+
 
         //window.draw(spriteTree);
         //for (int i = 0; i < countBranches; i++)
         //{
         //    window.draw(spriteBranches[i]);
         //}
-        //window.draw(spritePlayer); // í”Œë ˆì´ì–´
+        //window.draw(spritePlayer); // ÇÃ·¹ÀÌ¾î
         //window.draw(spriteAxe);
         //window.draw(spriteLog);
         //window.draw(spriteRIP);
         //window.draw(spriteBee);
         // ui
-        
-        //window.draw(textScore);
-        if (!ready)
-        {
-            window.draw(showTitle1);
-            window.draw(showTitle2);
-        }
-          /*  if (isPause && ready)
-            {
+
+     /*   window.draw(textScore);
 
 
-                window.draw(textMessage);
-
-            }
-       */
-        //window.draw(timerBar);
+          if (isPause)
+          {
+              window.draw(textMessage);
+          }
+     
+     window.draw(timerBar);*/
         window.display();
     }
     return 0;
